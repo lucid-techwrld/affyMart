@@ -1,12 +1,154 @@
-* {
-  margin: 0;
-  padding: 0;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
 }
 
-body {
-  background: rgb(88, 119, 146);
-  background: linear-gradient(38deg, rgba(88, 119, 146, 1) 24%, rgba(244, 224, 77, 1) 100%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+header {
+  position: fixed;
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin-top: 0;
+  top: 0;
+  align-items: center;
+  background-color: WhiteSmoke;
+  padding: 10px;
+}
+
+header h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+header button {
+  width: 100px;
+  height: 40px;
+  padding: 5px 10px;
+  background-color: #5B5FC7;
+  color: #fff;
+  margin-right: 20px;
+  border-radius: 30px;
+  border:none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section1 { 
+  margin-top: 70px;
+  width: 100%;
+}
+
+.section1 h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.section1 p {
+  font-size: 20px;
+  color: #FF1493;
+}
+
+.section1 button {
+  width: 200px;
+  height: 60px;
+  background-color: #FF1493;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 1px 1px 10px gray;
+}
+
+.section2 {
+  width: 100%;
+}
+
+.section2 p {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.section2 img {
+  width: 300px;
+  height: 300px;
+}
+
+.section3 {
+  width: 90%;
+  background-color: #f5f5f5;
+  padding: 10px;
+  position: relative;
+}
+
+.section3 h1 {
+  text-align: left;
+  font-size: 22px;
+  line-height: 35px;
+  top: 0;
+  margin-top: 0;
+}
+
+
+.quote {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 3em; 
+    font-weight: bold; 
+    color: #000; 
+    background-color: #f5f5f5; 
+    padding: 20px;
+    position: relative;
+    margin-top: 0;
+}
+
+.quote:before {
+  content: "\201C";
+  font-size: 2.5em; 
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  margin-bottom: 5px;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+}
+
+.imageContainer img {
+  width: 70px;
+  height: 80px;
+}
+
+.info p {
+  text-align: left;
+  margin-left: 10px;
+  font-size: 17px;
+}
+
+#name {
+  font-weight: bold;
+}
+
+.content {
+  width: 100%;
+  height: 250px;
+  background-color: #5B5FC7;
+  margin-top: 10px;
 }
