@@ -112,9 +112,14 @@ nav p {
   font-size: 20px;
 }
 
-#close {
-  margin-top: 10px;
-  float: right;
-  font-size: 30px;
+.navBar .navHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.navHead i {
+  font-size: 25px;
   color: #5B5FC7;
 }
