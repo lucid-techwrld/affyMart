@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="signIn.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
+  <img src="password.jpeg" alt="Password">
+  <h1>Welcome Back!</h1>
+  <p>Please enter your details</p>
+  
+  <form action="">
+    <!-- Login Group for Email -->
+    <div class="login-group">
+      <input type="email" id="email" name="email" autocomplete="on" required>
+      <label for="email">Email</label>
+    </div>
+    
+    <!-- Login Group for Password -->
+    <div class="login-group">
+      <input type="password" id="password" name="password" maxlength="8" required>
+      <label for="password">Password</label>
+    </div>
 
+    <!-- Remember Me and Forgot Password Section -->
+    <div class="remember">
+      <div class="checkBox">
+        <input type="checkbox" name="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember Me</label>
+      </div>
+      <a href="#">Forgotten Password?</a>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="loginButton">
+      <input type="submit" id="login" value="Login">
+    </div>
+  </form>
 </body>
-
 </html>
