@@ -19,6 +19,7 @@ header {
   width: 100%;
   margin-top: 0;
   top: 0;
+  z-index: 1;
 }
 
 header i { 
@@ -48,12 +49,14 @@ input {
 nav {
   background-color: #fff;
   width: 70%;
-  z-index: 999;
+  position: fixed;
   height: 100%;
+  top: 0;
   box-shadow: 3px 0px 50px black;
   display: none;
   flex-direction: column;
   transition: .3 ease;
+  z-index: 999;
 }
 
 ul {
@@ -197,4 +200,85 @@ main {
 marquee {
   color: red;
   font-size: 15px;
+}
+
+.product-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.products-box {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+.product {
+  flex: 1 0 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.product img {
+  width: 100%;
+  apsect-ratio: 16/9;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  background-color: #5B5FC7;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  padding: 5px;
+}
+.product-name {
+  width: 100%;
+  height: 70%;
+}
+
+.product-name p {
+  font-size: 15px;
+  color: black;
+  text-align: center;
+}
+
+.price-cart {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 30%;
+  align-items: center;
+}
+
+.price-cart p {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.price-cart button{
+  width: 70px;
+  height: 35px;
+  background-color: #FF006F;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
 }
