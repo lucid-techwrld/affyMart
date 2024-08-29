@@ -43,13 +43,27 @@
     </div>
   </header>
   
-  <main>
+  <main id="main">
     <div class="search-container">
       <input type="text" placeholder="Search for Products, Categories and more...">
       <i class="fas fa-search"></i>
     </div>
+    
     <section class="slide-image">
-      <img src="images/slide-image1.jpeg" alt="slide-image1.jpeg">
+      <div class="slider-wrapper">
+        <div class="slider">
+        <img src="images/slide-image1.jpeg" alt="slide-image1.jpeg" id="slide-1">
+        
+        <img src="images/slide-image2.jpeg" alt="slide-image2.jpeg" id="slide-2">
+        
+        <img src="images/slide-image3.jpeg" alt="slide-image3.jpeg" id="slide-3">
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+        </div>
+      </div>
     </section>
     
     <section class="product-highlight">
@@ -87,7 +101,7 @@
         </div>
         <div class="price-cart">
           <p id="price">$10,000</p>
-          <button>+</button>
+          <button onclick="addCart()">+</button>
         </div>
       </div>
     </div>
@@ -101,7 +115,7 @@
         </div>
         <div class="price-cart">
           <p id="price">$150.43</p>
-          <button>+</button>
+          <button onclick="addCart()">+</button>
         </div>
       </div>
     </div>
@@ -117,7 +131,7 @@
        </div>
        <div class="price-cart">
          <p id="price">$10,000</p>
-         <button>+</button>
+         <button onclick="addCart()">+</button>
        </div>
      </div>
    </div>
@@ -131,7 +145,7 @@
        </div>
        <div class="price-cart">
          <p id="price">$150.43</p>
-         <button>+</button>
+         <button onclick="addCart()">+</button>
        </div>
      </div>
    </div>
@@ -147,7 +161,7 @@
         </div>
         <div class="price-cart">
           <p id="price">$10,000</p>
-          <button>+</button>
+          <button onclick="addCart()">+</button>
         </div>
       </div>
     </div>
@@ -161,7 +175,7 @@
         </div>
         <div class="price-cart">
           <p id="price">$150.43</p>
-          <button>+</button>
+          <button onclick="addCart()">+</button>
         </div>
       </div>
     </div>
@@ -177,7 +191,7 @@
         </div>
         <div class="price-cart">
           <p id="price">$10,000</p>
-          <button>+</button>
+          <button onclick="addCart()">+</button>
         </div>
       </div>
     </div>
@@ -191,17 +205,48 @@
         </div>
         <div class="price-cart">
           <p id="price">$150.43</p>
-          <button>+</button>
+          <button onclick="addCart()">+</button>
         </div>
       </div>
     </div>
     </div>
     
     </section>
-    
-    <section class=""></section>
   </main>
   
+  <footer>
+  <div class="footer-container">
+    <div class="about-section">
+      <div class="footer-section">
+      <h4>About Us</h4>
+      <p>AffyMart is an innovative online shopping platform that offers a seamless and personalized shopping experience to customers worldwide. Established in 2024, AffyMart combines cutting-edge technology with a user-centric approach to provide a diverse range of products, including electronics, fashion, home goods, and more.</p>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#main">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: lucidtechwrld@gmail.com</p>
+      <p>Phone: +2347085948512, +2348022140228</p>
+    </div>
+    <div class="footer-section social-media">
+      <h4>Follow Us</h4>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 AffyMart. All Rights Reserved.</p>
+  </div>
+</footer>
+
   <script src="script.js"></script>
 </body>
 </html>
