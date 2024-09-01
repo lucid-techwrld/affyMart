@@ -156,6 +156,7 @@ nav p {
 main {
   width: 100%;
   margin-top: 50px;
+  scroll-behavior: smooth;
 }
 
 .search-container {
@@ -440,4 +441,70 @@ footer {
 .about-section {
   width: 100%;
   background: #ccc;
+}
+
+.filter-section {
+  display: none;
+  flex-direction: column;
+  padding: 15px;
+  height: 90vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 999;
+  font-size: 20px;
+  transition: .3s ease;
+}
+
+.filter-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter-head i {
+  color: #5B5FC7;
+  font-size: 20px;
+}
+
+.radio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.radio input {
+  width: 20px;
+  accent-color: #5B5FC7;
+}
+
+.price-range-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #5B5FC7;
+}
+
+.filter-section button {
+  width: 100%;
+  height: 40px;
+  border-radius: 30px;
+  margin-top: 70px;
+  background: #5B5FC7;
+  color: #fff;
+  font-size: 15px;
 }

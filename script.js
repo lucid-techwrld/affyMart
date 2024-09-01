@@ -34,3 +34,12 @@ function addCart() {
   console.log(cartQuantity)
 }
 
+function displayFilter() {
+  const filter = document.querySelector('.filter-section');
+  filter.style.display = 'flex'
+}
+
+function closeFilter() {
+  const filter = document.querySelector('.filter-section');
+  filter.style.display = 'none'
+}

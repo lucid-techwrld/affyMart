@@ -85,7 +85,57 @@
     
     <div class="product-head">
       <a href="products.html">See all</a>
-      <button class="filter">Filter <i class="fas fa-filter"></i></button>
+      <button class="filter" onclick="displayFilter()">Filter <i class="fas fa-filter"></i></button>
+    </div>
+    
+    <div class="filter-section">
+      <div class="filter-head">
+        <div class="filter-icon">
+           <i class="fas fa-filter"></i>
+            <span>Filter</span>
+        </div>
+        <i class="fas fa-times" onclick="closeFilter()"></i>
+      </div>
+      <hr>
+      <div class="radio-header">
+        <p>Sort by</p>
+        <p>-</p>
+      </div>
+      <div class="radio">
+          <input type="radio" name="filter-radio" id="recommended" />
+          <label for="recommended">Recommended</label>
+      </div>
+      
+      <div class="radio">
+        <input type="radio" name="filter-radio" id="featured" />
+        <label for="featured">Featured</label>
+      </div>
+      
+      <div class="radio">
+        <input type="radio" name="filter-radio" id="new" />
+        <label for="new">New</label>
+      </div>
+      
+      <div class="radio">
+        <input type="radio" name="filter-radio" id="priceHigh" />
+        <label for="priceHigh">Price: High to Low</label>
+      </div>
+      
+      <div class="radio">
+        <input type="radio" name="filter-radio" id="priceLow" />
+        <label for="priceLow">Price: Low to High</label>
+      </div>
+      <hr>
+      
+      <div class="price-range-header">
+        <p>Price</p>
+        <p>-</p>
+      </div>
+      
+      <input type="range" name="price" id="pricRange" min="0" max="1000" value="500">
+      <p class="rangeValue">Value: <span id="rangeValue">500</span></p>
+      
+      <button type="submit">Apply Filter</button>
     </div>
     
     <marquee behavior="smooth" direction="right">Shop Now and Enjoy Free Shipping on Orders Over $50! Hurry, Only a Few Items Left in Stock!</marquee>
