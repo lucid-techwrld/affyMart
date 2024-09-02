@@ -11,10 +11,19 @@
   <h1>PRODUCT CATALOG</h1>
   <label for="productImage">Product Image:</label>
   <input type="file" accept="image/*" id="productImage">
-  <input type="text" name="product-name" id="productName" placeholder="product name">
-  <input type="text" placeholder="product description">
-  <button>Add to Product</button>
   
-  <script src="script/productCatalog.js"></script>
+  <input type="text" name="product-name" class="productNameInput" placeholder="product name">
+  
+  <input type="text" placeholder="product description" class="productDescription">
+  
+  <input type="number" class="productPrice" placeholder="price">
+  
+  <button onclick="addProduct()">Add to Product</button>
+  
+  <div class="displayProducts">
+    
+  </div>
+  
+  <script src="scripts/productCatalog.js"></script>
 </body>
 </html>
