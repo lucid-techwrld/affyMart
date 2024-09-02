@@ -4,7 +4,7 @@ function displayProducts() {
   return `
     <div class="products-box">
       <div class="product">
-      <img src="images/${product.image}.jpeg" alt="product-high1">
+      <img src="images/${product.image}" alt="product-high1">
       <div class="product-info">
         <div class="product-name">
           <p id="product-name">${product.name} </p>
@@ -23,23 +23,40 @@ function displayProducts() {
 function addProduct() {
   const productName = document.querySelector('.productNameInput').value.trim();
   const productDesc = document.querySelector('.productDescription').value.trim();
-  const productImage = document.querySelector('.productImage');
+  const productImageInput = document.querySelector('.productImage');
   const price = document.querySelector('.productPrice').value;
-  if (productName && productDesc && price) {
-    products.push({name: productName, desc: productDesc, image: productImage, price: price});
-    console.table(products);
-    displayProducts();
+
+  if (productName && productDesc && price && productImageInput) {
+    if (productImageInput.files && productImageInput.files[0]) {
+      const productImage = productImageInput.files[0].name;
+
+      products.push({
+        name: productName,
+        desc: productDesc,
+        image: productImage,
+        price: price
+      });
+
+      console.table(products);
+      displayProducts();
+      clearInput();
+    } else {
+      console.log('Please select an image file.');
     }
-  else {
-    console.log('Pls Enter a valid Product Details');
+  } else {
+    console.log('Please enter valid product details.');
   }
 }
+
+function clearInput() {
+  document.querySelector('.productNameInput').value = '';
+  document.querySelector('.productDescription').value = '';
+  document.querySelector('.productImage').value = '';
+  document.querySelector('.productPrice').value = '';
+}
+
 
 function delButton(index) {
   products.splice(index, 1);
   displayProducts();
-}
-
-function clearInput() {
-  const name = 
 }
