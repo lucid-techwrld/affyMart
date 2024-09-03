@@ -20,28 +20,6 @@ function displayProducts1() {
   const display = document.querySelector('.displayProducts').innerHTML = displayHTML;
 }
 
-function displayProducts2() {
-  const displayHTML = products.map((product, index) => {
-    return `
-    <div class="products-box">
-      <div class="product">
-      <img src="images/${product.image}" alt="${product.image}">
-      <div class="product-info">
-        <div class="product-name">
-          <p id="product-name">${product.name} </p>
-          <p id="description">${product.desc}</p>
-        </div>
-        <div class="price-cart">
-          <p id="price">$${product.price}</p>
-          <button onclick="delButton(${index})">Delete</button>
-        </div>
-      </div>
-    </div>
-  `
-  }).join('');
-  const display = document.querySelector('.productBox').innerHTML = displayHTML;
-}
-
 function addProduct() {
   const productName = document.querySelector('.productNameInput').value.trim();
   const productDesc = document.querySelector('.productDescription').value.trim();
@@ -61,7 +39,6 @@ function addProduct() {
 
       console.table(products);
       displayProducts1();
-      displayProducts2();
       clearInput();
     } else {
       console.log('Please select an image file.');
@@ -82,5 +59,4 @@ function clearInput() {
 function delButton(index) {
   products.splice(index, 1);
   displayProducts1();
-  displayProducts2();
 }
