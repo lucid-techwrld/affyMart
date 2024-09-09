@@ -24,16 +24,6 @@ function autoScroll() {
 // Set the interval to scroll every 3 seconds
 setInterval(autoScroll, 3000);
 
-let cartQuantity = 0;
-
-function addCart() {
-  const cartDisplay = document.getElementById('cartId');
-  cartQuantity = cartQuantity + 1;
-  
-  cartDisplay.textContent = cartQuantity
-  console.log(cartQuantity)
-}
-
 function displayFilter() {
   const filter = document.querySelector('.filter-section');
   filter.style.display = 'flex'
