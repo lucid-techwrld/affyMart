@@ -98,7 +98,19 @@ header .checkout {
   font-weight: bold;
 }
 
+.total span {
+  font-size: 17px;
+  color: #01A22FF2;
+  font-weight: bold;
+}
+
 .order-review-section {
+  width: 100%;
+  height: auto;
+
+}
+
+.order-container {
   width: 100%;
   height: auto;
   padding: 10px 5px;
@@ -106,7 +118,7 @@ header .checkout {
   display: flex;
   flex-direction: column;
   
-  border: 2px solid #5B5FC7;
+  border: 1px solid #5B5FC7;
   margin-top: 10px;
 }
 
