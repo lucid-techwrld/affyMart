@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
@@ -8,12 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    <nav class="navBar">
-      <div class="navHead">
-        <h1>AffyMart</h1>
+  <nav class="navBar">
+    <div class="navHead">
+      <h1>AffyMart</h1>
       <i class="fas fa-times" id="close" onclick=closeSidebar()></i>
-      </div>
+    </div>
     <ul class="user">
       <li><a href="#main" onclick="closeSidebar()"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="#about" onclick="closeSidebar()"><i class="fas fa-user"></i> About us</a></li>
@@ -31,32 +33,32 @@
       <li><a href="#"><i class="fas fa-prescription-bottle-alt"></i> Medical</a></li>
     </ul>
   </nav>
-    
-    <header>
+
+  <header>
     <i class="fas fa-bars" onclick=showSidebar()></i>
     <h1>AffyMart</h1>
     <div class="cart">
       <i class="fas fa-user"></i>
       <a href="checkout.html"><i class="fas fa-shopping-cart"></i>
-      <span id="cartId" class="js-cart-quantity">0</span>
+        <span id="cartId" class="js-cart-quantity">0</span>
       </a>
     </div>
   </header>
-  
+
   <main id="main">
     <div class="search-container">
       <input type="text" placeholder="Search for Products, Categories and more...">
       <i class="fas fa-search"></i>
     </div>
-    
+
     <section class="slide-image">
       <div class="slider-wrapper">
         <div class="slider">
-        <img src="images/slide-image1.jpeg" alt="slide-image1.jpeg" id="slide-1">
-        
-        <img src="images/slide-image2.jpeg" alt="slide-image2.jpeg" id="slide-2">
-        
-        <img src="images/slide-image3.jpeg" alt="slide-image3.jpeg" id="slide-3">
+          <img src="images/slide-image1.jpeg" alt="slide-image1.jpeg" id="slide-1">
+
+          <img src="images/slide-image2.jpeg" alt="slide-image2.jpeg" id="slide-2">
+
+          <img src="images/slide-image3.jpeg" alt="slide-image3.jpeg" id="slide-3">
         </div>
         <div class="slider-nav">
           <a href="#slide-1"></a>
@@ -65,34 +67,34 @@
         </div>
       </div>
     </section>
-    
+
     <section class="product-highlight">
-    <div class="highlight">
-      <img src="images/product-high1.jpeg" alt="product-high1">
-      <p id="product-name">Fashion Short Shirt </p>
-    </div>
-      
-     <div class="highlight">
-      <img src="images/product-high1.jpeg" alt="product-high1">
-      <p id="product-name">Fashion Short Shirt </p>
-    </div>
-    
-     <div class="highlight">
-      <img src="images/product-high1.jpeg" alt="product-high1">
-      <p id="product-name">Fashion Short Shirt </p>
+      <div class="highlight">
+        <img src="images/product-high1.jpeg" alt="product-high1">
+        <p id="product-name">Fashion Short Shirt </p>
+      </div>
+
+      <div class="highlight">
+        <img src="images/product-high1.jpeg" alt="product-high1">
+        <p id="product-name">Fashion Short Shirt </p>
+      </div>
+
+      <div class="highlight">
+        <img src="images/product-high1.jpeg" alt="product-high1">
+        <p id="product-name">Fashion Short Shirt </p>
       </div>
     </section>
-    
+
     <div class="product-head">
       <a href="products.html">See all</a>
       <button class="filter" onclick="displayFilter()">Filter <i class="fas fa-filter"></i></button>
     </div>
-    
+
     <div class="filter-section">
       <div class="filter-head">
         <div class="filter-icon">
-           <i class="fas fa-filter"></i>
-            <span>Filter</span>
+          <i class="fas fa-filter"></i>
+          <span>Filter</span>
         </div>
         <i class="fas fa-times" onclick="closeFilter()"></i>
       </div>
@@ -102,87 +104,88 @@
         <p>-</p>
       </div>
       <div class="radio">
-          <input type="radio" name="filter-radio" id="recommended" />
-          <label for="recommended">Recommended</label>
+        <input type="radio" name="filter-radio" id="recommended" />
+        <label for="recommended">Recommended</label>
       </div>
-      
+
       <div class="radio">
         <input type="radio" name="filter-radio" id="featured" />
         <label for="featured">Featured</label>
       </div>
-      
+
       <div class="radio">
         <input type="radio" name="filter-radio" id="new" />
         <label for="new">New</label>
       </div>
-      
+
       <div class="radio">
         <input type="radio" name="filter-radio" id="priceHigh" />
         <label for="priceHigh">Price: High to Low</label>
       </div>
-      
+
       <div class="radio">
         <input type="radio" name="filter-radio" id="priceLow" />
         <label for="priceLow">Price: Low to High</label>
       </div>
       <hr>
-      
+
       <div class="price-range-header">
         <p>Price</p>
         <p>-</p>
       </div>
-      
+
       <input type="range" name="price" id="pricRange" min="0" max="1000" value="500">
       <p class="rangeValue">Value: <span id="rangeValue">500</span></p>
-      
+
       <button type="submit">Apply Filter</button>
     </div>
-    
+
     <marquee behavior="smooth" direction="right">Shop Now and Enjoy Free Shipping on Orders Over $50! Hurry, Only a Few Items Left in Stock!</marquee>
-    
+
     <section class="product-container">
       <div class="products-box">
         <div class="product js-products">
-        
+
         </div>
-      </div>  
+      </div>
     </section>
   </main>
-  
+
   <footer>
-  <div class="footer-container">
-    <div class="about-section">
+    <div class="footer-container">
+      <div class="about-section">
+        <div class="footer-section">
+          <h4>About Us</h4>
+          <p id="about">AffyMart is an innovative online shopping platform that offers a seamless and personalized shopping experience to customers worldwide. Established in 2024, AffyMart combines cutting-edge technology with a user-centric approach to provide a diverse range of products, including electronics, fashion, home goods, and more.</p>
+        </div>
+      </div>
       <div class="footer-section">
-      <h4>About Us</h4>
-      <p id="about">AffyMart is an innovative online shopping platform that offers a seamless and personalized shopping experience to customers worldwide. Established in 2024, AffyMart combines cutting-edge technology with a user-centric approach to provide a diverse range of products, including electronics, fashion, home goods, and more.</p>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#main">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section" id="contact">
+        <h4>Contact Us</h4>
+        <p>Email: lucidtechwrld@gmail.com</p>
+        <p>Phone: +2347085948512, +2348022140228</p>
+      </div>
+      <div class="footer-section social-media">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#main">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2024 AffyMart. All Rights Reserved.</p>
     </div>
-    <div class="footer-section" id="contact">
-      <h4>Contact Us</h4>
-      <p>Email: lucidtechwrld@gmail.com</p>
-      <p>Phone: +2347085948512, +2348022140228</p>
-    </div>
-    <div class="footer-section social-media">
-      <h4>Follow Us</h4>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2024 AffyMart. All Rights Reserved.</p>
-  </div>
-</footer>
+  </footer>
 
   <script src="scripts/script.js"></script>
   <script type="module" src="scripts/products.js"></script>
 </body>
+
 </html>

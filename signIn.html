@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,43 +9,45 @@
   <link rel="stylesheet" href="styles/signIn.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
   <img src="images/password.jpeg" alt="Password">
   <h1>Welcome Back!</h1>
   <p>Please enter your details</p>
-  
+
   <form action="">
     <!-- Login Group for Email -->
     <div class="formBox">
-          <div class="login-group">
-      <input type="email" id="email" name="email" autocomplete="on" required>
-      <label for="email">Email</label>
-    </div>
-
-    <!-- Login Group for Password -->
-    <div class="login-group">
-      <input type="password" id="password" name="password" maxlength="8" required>
-      <label for="password">Password</label>
-    </div>
-
-    <!-- Remember Me and Forgot Password Section -->
-    <div class="remember">
-      <div class="checkBox">
-        <input type="checkbox" name="checkbox" id="rememberMe">
-        <label for="rememberMe">Remember Me</label>
+      <div class="login-group">
+        <input type="email" id="email" name="email" autocomplete="on" required>
+        <label for="email">Email</label>
       </div>
-      <a href="#">Forgotten Password?</a>
-    </div>
 
-    <!-- Submit Button -->
-    <div class="loginButton">
-      <input type="submit" id="login" value="Login">
-    </div>
+      <!-- Login Group for Password -->
+      <div class="login-group">
+        <input type="password" id="password" name="password" maxlength="8" required>
+        <label for="password">Password</label>
+      </div>
+
+      <!-- Remember Me and Forgot Password Section -->
+      <div class="remember">
+        <div class="checkBox">
+          <input type="checkbox" name="checkbox" id="rememberMe">
+          <label for="rememberMe">Remember Me</label>
+        </div>
+        <a href="#">Forgotten Password?</a>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="loginButton">
+        <input type="submit" id="login" value="Login">
+      </div>
     </div>
   </form>
   <footer>
     <p>Don't have an account? <a href="signUp.html">SignUp</a></p>
   </footer>
-  
+
 </body>
+
 </html>

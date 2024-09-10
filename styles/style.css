@@ -23,7 +23,7 @@ header {
   z-index: 1;
 }
 
-header i { 
+header i {
   font-size: 25px;
   color: #5B5FC7;
 }
@@ -86,6 +86,7 @@ nav {
 ul {
   width: 100%;
 }
+
 ul li {
   width: 100%;
   height: 40px;
@@ -109,9 +110,10 @@ ul i {
   color: #5B5FC7;
 }
 
-.user ul{
+.user ul {
   width: 100%;
 }
+
 .user ul li {
   width: 100%;
   height: 40px;
@@ -240,7 +242,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  
+
 }
 
 .highlight {
@@ -257,7 +259,7 @@ main {
   aspect-ratio: 1/1;
 }
 
-.highlight p  {
+.highlight p {
   text-align: center;
   font-size: 15px;
   position: absolute;
@@ -273,7 +275,7 @@ main {
   background-color: #5B5FC7;
 }
 
-.product-head a{
+.product-head a {
   text-decoration: none;
   color: #fff;
   font-size: 15px;
@@ -315,7 +317,7 @@ marquee {
 
 
 .js-products {
-  flex: 1 0 49%; 
+  flex: 1 0 49%;
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -330,8 +332,10 @@ marquee {
 
 .js-products img {
   width: 100%;
-  height: 200px; /* Set a consistent height */
-  object-fit: fit; /* Scale image to cover the area while maintaining aspect ratio */
+  height: 200px;
+  /* Set a consistent height */
+  object-fit: fit;
+  /* Scale image to cover the area while maintaining aspect ratio */
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   z-index: 1;
@@ -350,6 +354,7 @@ marquee {
   padding: 5px;
   z-index: 9;
 }
+
 .product-name {
   width: 100%;
   height: 70%;
@@ -375,7 +380,7 @@ marquee {
   font-weight: bold;
 }
 
-.price-cart button{
+.price-cart button {
   width: 70px;
   height: 35px;
   background-color: #FF006F;
@@ -493,6 +498,7 @@ footer {
   gap: 10px;
   margin-bottom: 10px;
 }
+
 .radio input {
   width: 20px;
   accent-color: #5B5FC7;

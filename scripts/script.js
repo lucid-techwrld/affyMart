@@ -1,11 +1,11 @@
 function showSidebar() {
   const show = document.querySelector('.navBar');
-  show.style.display ='flex'
+  show.style.display = 'flex'
 }
 
 function closeSidebar() {
   const show = document.querySelector('.navBar');
-  show.style.display ='none'
+  show.style.display = 'none'
 }
 
 // JavaScript code to enable auto-scroll

@@ -1,4 +1,4 @@
-import {cart, addCart} from '../Data/cart.js'
+import { cart, addCart } from '../Data/cart.js'
 import products from '../Data/productsData.js'
 
 
@@ -27,12 +27,12 @@ products.forEach((product, index) => {
 });
 
 function updateCartQuantity() {
-    let cartQuantity = 0;
-    cart.forEach((cartItem) => {
-      cartQuantity += cartItem.quantity;
-    });
-    const cartCount = document.querySelector('.js-cart-quantity');
-    cartCount.textContent = cartQuantity;
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  const cartCount = document.querySelector('.js-cart-quantity');
+  cartCount.textContent = cartQuantity;
 }
 
 document.querySelectorAll('.add-cart-button').forEach((button) => {
