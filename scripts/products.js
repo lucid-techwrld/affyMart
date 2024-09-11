@@ -1,4 +1,4 @@
-import { cart, addCart } from '../Data/cart.js'
+import {cart, addCart} from '../Data/cart.js'
 import products from '../Data/productsData.js'
 
 
