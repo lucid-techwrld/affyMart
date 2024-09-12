@@ -1,10 +1,11 @@
-import { cart, removeCartItem } from '../Data/cart.js';
+import { cart, removeCartItem, updateDeliveryDateOption} from '../Data/cart.js';
 import products from '../Data/productsData.js';
 import formatMoney from '../Data/utils/formatMoney.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import deliveryOptions from '../Data/deliveryDate.js';
 
 
+function renderOderSummary() {
 
 let cartSummaryHtml = '';
 
@@ -73,7 +74,7 @@ function deliveryDateOptionHTML(matchingProduct, item) {
   const isChecked = deliveryOpt.id === item.deliveryOptionId;
   
     html += `
-     <div class="delivery-date-container">
+     <div class="delivery-date-container js-delivery-option" data-product-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOpt.id}">
             <input type="radio" name="date${matchingProduct.id}" ${isChecked ? 'checked' : ''}>
             <div class="delivery-options">
               <p class="date">${formattedDate}</p>
@@ -99,3 +100,15 @@ document.querySelectorAll('.js-delete-btn').forEach((btn) => {
     }
   });
 });
+
+
+document.querySelectorAll('.js-delivery-option').forEach((element) => {
+  element.addEventListener('click', ()=> {
+    const {productId, deliveryOptionId} = element.dataset;
+    updateDeliveryDateOption(productId, deliveryOptionId);
+    renderOderSummary();
+  });
+});
+}
+
+renderOderSummary();
