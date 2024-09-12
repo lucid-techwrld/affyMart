@@ -1,5 +1,6 @@
-import {cart, addCart} from '../Data/cart.js'
-import products from '../Data/productsData.js'
+import {cart, addCart} from '../Data/cart.js';
+import products from '../Data/productsData.js';
+import formatMoney from '../Data/utils/formatMoney.js';
 
 
 
@@ -16,7 +17,7 @@ products.forEach((product, index) => {
           <p class="add-cart-message"></p>
         </div>
         <div class="price-cart">
-          <p id="price">$${(product.priceCents / 100).toFixed(2)} </p>
+          <p id="price">$${formatMoney(product.priceCents)} </p>
           <button class= "add-cart-button" data-product-id="${product.id}">+</button>
         </div>
       </div>

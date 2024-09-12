@@ -1,5 +1,10 @@
 import { cart, removeCartItem } from '../Data/cart.js';
 import products from '../Data/productsData.js';
+import formatMoney from '../Data/utils/formatMoney.js'
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import deliveryOptions from '../Data/deliveryDate.js';
+
+
 
 let cartSummaryHtml = '';
 
@@ -9,9 +14,17 @@ cart.forEach((item) => {
   let matchingProduct = products.find((matchingItem) => matchingItem.id === productId);
 
   if (matchingProduct) {
+    const deliveryOptionId = item.deliveryOptionId;
+    
+    let deliveryOption = deliveryOptions.find((option) => option.id === deliveryOptionId);
+    
+    const today = dayjs();
+    const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
+    const formattedDate = deliveryDate.format('dddd, MMMM D');
+    
     cartSummaryHtml += `
       <div class="order-container js-order-container-${matchingProduct.id}">
-        <p class="delivery-date">9th September 2024</p>
+        <p class="delivery-date">Delivery Date: ${formattedDate}</p>
         <div class="order-products">
           <div class="product-image">
             <img src="${matchingProduct.image}" alt="basket-ball">
@@ -19,7 +32,7 @@ cart.forEach((item) => {
           <div class="product-details">
             <div class="details">
               <p>${matchingProduct.name}</p>
-              <p>Price: ${(matchingProduct.priceCents / 100).toFixed(2)}</p>
+              <p>Price: $${formatMoney(matchingProduct.priceCents)}</p>
               <p>Quantity: <span class="quantity-label">${item.quantity}</span></p>
             </div>
             <div class="update-item">
@@ -31,29 +44,8 @@ cart.forEach((item) => {
 
         <div class="delivery-date-option">
           <p class="opt">Choose a delivery option</p>
-          <div class="delivery-date-container">
-            <input type="radio" name="date${matchingProduct.id}">
-            <div class="delivery-options">
-              <p class="date">Tuesday, 10 September</p>
-              <p>$5.99</p>
-            </div>
-          </div>
+          ${deliveryDateOptionHTML(matchingProduct, item)}
 
-          <div class="delivery-date-container">
-            <input type="radio" name="date${matchingProduct.id}">
-            <div class="delivery-options">
-              <p class="date">Friday, 13 September</p>
-              <p>$3.76</p>
-            </div>
-          </div>
-
-          <div class="delivery-date-container">
-            <input type="radio" name="date${matchingProduct.id}">
-            <div class="delivery-options">
-              <p class="date">Monday, 16 September</p>
-              <p>FREE Shipping</p>
-            </div>
-          </div>
         </div>
       </div>
     `;
@@ -61,6 +53,39 @@ cart.forEach((item) => {
     console.error(`Product with id ${productId} not found in products array`);
   }
 });
+
+
+function deliveryDateOptionHTML(matchingProduct, item) {
+  
+  let html = '';
+  
+  deliveryOptions.forEach((deliveryOpt) => {
+
+  const today = dayjs();
+  const deliveryDate = today.add(deliveryOpt.deliveryDays, 'days');
+  const formattedDate = deliveryDate.format('dddd, MMMM D');
+  
+  
+  const priceString = deliveryOpt.deliveryPrice === 0
+  ? 'FREE'
+  : `$${formatMoney(deliveryOpt.deliveryPrice)} - `;
+  
+  const isChecked = deliveryOpt.id === item.deliveryOptionId;
+  
+    html += `
+     <div class="delivery-date-container">
+            <input type="radio" name="date${matchingProduct.id}" ${isChecked ? 'checked' : ''}>
+            <div class="delivery-options">
+              <p class="date">${formattedDate}</p>
+              <p>${priceString} SHIPPING</p>
+            </div>
+          </div>
+   `
+  });
+  return html;
+}
+
+
 
 document.querySelector('.js-order-review').innerHTML = cartSummaryHtml;
 
