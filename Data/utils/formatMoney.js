@@ -1,5 +1,5 @@
 export function formatMoney(priceCents) {
-  const money = (priceCents / 100).toFixed(2);
+  const money = (Math.round(priceCents) / 100).toFixed(2);
   return money;
 }
 

@@ -1,8 +1,9 @@
 import { cart, removeCartItem, updateDeliveryDateOption } from '../../Data/cart.js';
-import products from '../../Data/productsData.js';
+import {products, getProduct} from '../../Data/productsData.js';
 import formatMoney from '../../Data/utils/formatMoney.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import deliveryOptions from '../../Data/deliveryDate.js';
+import {deliveryOptions, getDelivery} from '../../Data/deliveryDate.js';
+import {renderPaymentSymmary} from './paymentSummary.js';
 
 
 export function renderOderSummary() {
@@ -12,12 +13,12 @@ export function renderOderSummary() {
   cart.forEach((item) => {
     const productId = item.productId;
 
-    let matchingProduct = products.find((matchingItem) => matchingItem.id === productId);
+    const matchingProduct = getProduct(productId);
 
     if (matchingProduct) {
       const deliveryOptionId = item.deliveryOptionId;
 
-      let deliveryOption = deliveryOptions.find((option) => option.id === deliveryOptionId);
+      const deliveryOption = getDelivery(deliveryOptionId);
 
       const today = dayjs();
       const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
@@ -97,6 +98,8 @@ function deliveryDateOptionHTML(matchingProduct, item) {
       const orderContainer = document.querySelector(`.js-order-container-${productId}`);
       if (orderContainer) {
         orderContainer.remove();
+        
+        renderPaymentSymmary();
       }
     });
   });
@@ -107,6 +110,7 @@ function deliveryDateOptionHTML(matchingProduct, item) {
       const { productId, deliveryOptionId } = element.dataset;
       updateDeliveryDateOption(productId, deliveryOptionId);
       renderOderSummary();
+      renderPaymentSymmary();
     });
   });
 }

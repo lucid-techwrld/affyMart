@@ -1,5 +1,5 @@
 import {cart, addCart} from '../Data/cart.js';
-import products from '../Data/productsData.js';
+import {products} from '../Data/productsData.js';
 import formatMoney from '../Data/utils/formatMoney.js';
 
 
