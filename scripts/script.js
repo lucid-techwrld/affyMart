@@ -1,10 +1,10 @@
 function showSidebar() {
-  const show = document.querySelector('.navBar');
+  const show = document.querySelector('.navigation-bar');
   show.style.display = 'flex'
 }
 
 function closeSidebar() {
-  const show = document.querySelector('.navBar');
+  const show = document.querySelector('.navigation-bar');
   show.style.display = 'none'
 }
 
@@ -33,3 +33,9 @@ function closeFilter() {
   const filter = document.querySelector('.filter-section');
   filter.style.display = 'none'
 }
+let rangeInput = 0;
+const range = document.querySelector('.priceRange');
+range.addEventListener('input', () => {
+  rangeInput = range.value;
+  document.querySelector('.js-range-value').innerHTML = rangeInput;
+});

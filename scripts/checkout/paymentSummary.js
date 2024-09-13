@@ -7,12 +7,16 @@ import {formatMoney} from '../../Data/utils/formatMoney.js';
 export function renderPaymentSymmary() {
   let totalPrice = 0;
   let deliveryCost = 0;
+  let cartCount = 0;
   cart.forEach((cartItem) => {
+  cartCount += cartItem.quantity;
+  
   const product = getProduct(cartItem.productId);
   totalPrice += product.priceCents * cartItem.quantity
   
   const delivery = getDelivery(cartItem.deliveryOptionId);
   deliveryCost += delivery.deliveryPrice
+  
   });
   
   const totalBeforeTax = totalPrice + deliveryCost;
@@ -27,7 +31,7 @@ export function renderPaymentSymmary() {
           Order Summary
         </div>
         <div class="items-price summary">
-          <span>Items(<span class="js-checkout-quantity">3</span>):</span>
+          <span>Items(<span class="js-checkout-quantity">${cartCount}</span>):</span>
           <span>$${formatMoney(totalPrice)}</span>
         </div>
         <div class="shipping-price summary">
@@ -53,4 +57,3 @@ export function renderPaymentSymmary() {
   
   document.querySelector('.js-payment-summary').innerHTML = paymenSummaryHTML;
 }
-

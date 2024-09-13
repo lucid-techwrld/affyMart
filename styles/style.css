@@ -70,14 +70,23 @@ input {
   height: 30px;
 }
 
-nav {
+.navigation-bar {
+  width: 100%;
+  height: 100vh;
+  background-color: #0F0F0F69;
+  top: 0;
+  position: fixed;
+  z-index: 999;
+  display: none;
+  touch-action: pan-x;
+}
+
+.navBar {
   background-color: #fff;
   width: 70%;
   position: fixed;
   height: 100%;
   top: 0;
-  box-shadow: 3px 0px 50px black;
-  display: none;
   flex-direction: column;
   transition: .3 ease;
   z-index: 999;
@@ -463,7 +472,7 @@ footer {
   display: none;
   flex-direction: column;
   padding: 15px;
-  height: 90vh;
+  height: 85vh;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -471,6 +480,7 @@ footer {
   z-index: 999;
   font-size: 20px;
   transition: .3s ease;
+  touch-action: pan-x;
 }
 
 .filter-head {

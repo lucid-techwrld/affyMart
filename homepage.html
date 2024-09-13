@@ -11,7 +11,9 @@
 </head>
 
 <body>
-  <nav class="navBar">
+  
+  <nav class="navigation-bar">
+    <div class="navBar">
     <div class="navHead">
       <h1>AffyMart</h1>
       <i class="fas fa-times" id="close" onclick=closeSidebar()></i>
@@ -32,6 +34,7 @@
       <li><a href="#"><i class="fas fa-apple-alt"></i> Grocery</a></li>
       <li><a href="#"><i class="fas fa-prescription-bottle-alt"></i> Medical</a></li>
     </ul>
+    </div>
   </nav>
 
   <header>
@@ -114,7 +117,7 @@
       </div>
 
       <div class="radio">
-        <input type="radio" name="filter-radio" id="new" />
+        <input type="radio" name="filter-radio" id="new" checked/>
         <label for="new">New</label>
       </div>
 
@@ -134,8 +137,8 @@
         <p>-</p>
       </div>
 
-      <input type="range" name="price" id="pricRange" min="0" max="1000" value="500">
-      <p class="rangeValue">Value: <span id="rangeValue">500</span></p>
+      <input type="range" name="price" class="priceRange" min="1" max="50" value="25">
+      <p class="rangeValue">Value: $<span class="js-range-value">25</span></p>
 
       <button type="submit">Apply Filter</button>
     </div>
