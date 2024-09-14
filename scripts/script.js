@@ -33,9 +33,3 @@ function closeFilter() {
   const filter = document.querySelector('.filter-section');
   filter.style.display = 'none'
 }
-let rangeInput = 0;
-const range = document.querySelector('.priceRange');
-range.addEventListener('input', () => {
-  rangeInput = range.value;
-  document.querySelector('.js-range-value').innerHTML = rangeInput;
-});

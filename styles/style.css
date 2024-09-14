@@ -535,3 +535,7 @@ input[type="range"] {
   color: #fff;
   font-size: 15px;
 }
+
+.filter-section button:hover {
+  background: #595FA4;
+}

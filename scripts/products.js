@@ -1,11 +1,11 @@
 import {cart, addCart} from '../Data/cart.js';
 import {products} from '../Data/productsData.js';
 import formatMoney from '../Data/utils/formatMoney.js';
+//import {filterButton} from './filter.js'
 
 
 
 document.querySelector('.products-box').innerHTML = ''; // Clear the container first
-
 products.forEach((product, index) => {
   const html = `
   <div class="js-products">
@@ -24,8 +24,11 @@ products.forEach((product, index) => {
     </div>
   </div>
   `;
+  //console.log(html);
   document.querySelector('.products-box').innerHTML += html;
 });
+
+//document.querySelector('.products-box').innerHTML += html;
 
 function updateCartQuantity() {
   let cartQuantity = 0;
@@ -43,3 +46,6 @@ document.querySelectorAll('.add-cart-button').forEach((button) => {
     updateCartQuantity();
   });
 });
+
+
+//filterButton();
