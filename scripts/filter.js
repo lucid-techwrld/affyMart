@@ -1,5 +1,6 @@
 import { products } from '../Data/productsData.js';
 import formatMoney from '../Data/utils/formatMoney.js';
+//import {closeFilter} from './script.js';
 
 let rangeInput = 0;
 const range = document.querySelector('.priceRange');
@@ -21,5 +22,7 @@ export function filterButton(renderProductHTML) {
 
     // Render filtered products
     renderProductHTML(newPrice);
+    //closeFilter();
   });
 }
+
