@@ -11,7 +11,9 @@ function renderProductHTML(productsToRender) {
     const html = `
     <div class="js-products">
       <div class="product-item">
+      <a href="order.html" data-order-product="${product.id}" class= "view-order">
         <img src="${product.image}" alt="${product.image}">
+        </a>
         <div class="product-info">
           <div class="product-name">
             <p id="product-name">${product.name}</p>
@@ -53,8 +55,20 @@ function updateCartQuantity() {
   cartCount.textContent = cartQuantity;
 }
 
+function viewOrder() {
+  document.querySelectorAll('.view-order').forEach((element) => {
+    element.addEventListener('click', () => {
+      const productView = element.dataset.orderProduct;
+      // Save productView to localStorage
+      localStorage.setItem('selectedProductView', productView);
+    });
+  });
+}
+
+
 // Initial rendering of all products
 renderProductHTML(products);
 
 // Initialize the filter button
 filterButton(renderProductHTML); // Pass the render function to filter.js
+viewOrder();
