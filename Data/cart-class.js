@@ -1,9 +1,13 @@
-function Carts(localStorageKey) {
-  const cart = {
-  cartItem: undefined,
+class Cart {
+  cartItem = undefined;
+  localStorageKey = undefined;
+  constructor(localStorageKey) {
+    this.localStorageKey = localStorageKey;
+    this.loadLocalStorage();
+  }
 
   loadLocalStorage() {
-    this.cartItem = JSON.parse(localStorage.getItem(localStorageKey));
+    this.cartItem = JSON.parse(localStorage.getItem(this.localStorageKey));
 
     if (!this.cartItem) {
       this.cartItem = [
@@ -19,11 +23,11 @@ function Carts(localStorageKey) {
     }
   ];
     }
-  },
+  }
 
   saveToStorage() {
-    localStorage.setItem(localStorageKey, JSON.stringify(this.cartItem));
-  },
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItem));
+  }
 
   addCart(productId) {
     let matchingItem;
@@ -45,7 +49,7 @@ function Carts(localStorageKey) {
       });
     }
     this.saveToStorage();
-  },
+  }
 
   removeCartItem(productId) {
     const newCart = [];
@@ -57,7 +61,7 @@ function Carts(localStorageKey) {
     });
     this.cartItem = newCart;
     this.saveToStorage();
-  },
+  }
 
   updateDeliveryDateOption(productId, deliveryOptionId) {
     let matchingItem = cart.find((item) => productId === item.productId);
@@ -67,17 +71,12 @@ function Carts(localStorageKey) {
     this.saveToStorage();
   }
 
-
 }
 
-return cart;
-}
 
-const cart = Carts('cart-oop');
-const businessCart = Carts('businessCart');
+const cart = new Cart('cart-oop');
+const businessCart = new Cart('business');
 
 
-cart.loadLocalStorage();
-businessCart.loadLocalStorage();
 console.log(businessCart);
 console.log(cart)
