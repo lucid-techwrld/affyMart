@@ -4,6 +4,7 @@ import formatMoney from '../../Data/utils/formatMoney.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions, getDelivery} from '../../Data/deliveryDate.js';
 import {renderPaymentSymmary} from './paymentSummary.js';
+import {renderCheckoutHead} from '../checkout-head.js';
 
 
 export function renderOderSummary() {
@@ -100,6 +101,7 @@ function deliveryDateOptionHTML(matchingProduct, item) {
         orderContainer.remove();
         
         renderPaymentSymmary();
+        renderCheckoutHead();
       }
     });
   });
@@ -111,6 +113,7 @@ function deliveryDateOptionHTML(matchingProduct, item) {
       cart.updateDeliveryDateOption(productId, deliveryOptionId);
       renderOderSummary();
       renderPaymentSymmary();
+      renderCheckoutHead();
     });
   });
 }
