@@ -1,4 +1,4 @@
-import { cart, removeCartItem, updateDeliveryDateOption } from '../../Data/cart.js';
+import cart from '../../Data/cart-class.js';
 import {products, getProduct} from '../../Data/productsData.js';
 import formatMoney from '../../Data/utils/formatMoney.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -10,7 +10,7 @@ export function renderOderSummary() {
 
   let cartSummaryHtml = '';
 
-  cart.forEach((item) => {
+  cart.cartItem.forEach((item) => {
     const productId = item.productId;
 
     const matchingProduct = getProduct(productId);
@@ -94,7 +94,7 @@ function deliveryDateOptionHTML(matchingProduct, item) {
   document.querySelectorAll('.js-delete-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const productId = btn.dataset.productId;
-      removeCartItem(productId);
+      cart.removeCartItem(productId);
       const orderContainer = document.querySelector(`.js-order-container-${productId}`);
       if (orderContainer) {
         orderContainer.remove();
@@ -108,7 +108,7 @@ function deliveryDateOptionHTML(matchingProduct, item) {
   document.querySelectorAll('.js-delivery-option').forEach((element) => {
     element.addEventListener('click', () => {
       const { productId, deliveryOptionId } = element.dataset;
-      updateDeliveryDateOption(productId, deliveryOptionId);
+      cart.updateDeliveryDateOption(productId, deliveryOptionId);
       renderOderSummary();
       renderPaymentSymmary();
     });

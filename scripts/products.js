@@ -1,4 +1,4 @@
-import { cart, addCart } from '../Data/cart.js';
+import cart from '../Data/cart-class.js';
 import { products } from '../Data/productsData.js';
 import formatMoney from '../Data/utils/formatMoney.js';
 import { filterButton } from './filter.js';
@@ -39,7 +39,7 @@ function applyCartButtonListeners() {
   document.querySelectorAll('.add-cart-button').forEach((button) => {
     button.addEventListener('click', () => {
       const productId = button.dataset.productId;
-      addCart(productId);
+      cart.addCart(productId);
       updateCartQuantity();
     });
   });
@@ -48,7 +48,7 @@ function applyCartButtonListeners() {
 // Function to update cart quantity
 function updateCartQuantity() {
   let cartQuantity = 0;
-  cart.forEach((cartItem) => {
+  cart.cartItem.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
   const cartCount = document.querySelector('.js-cart-quantity');

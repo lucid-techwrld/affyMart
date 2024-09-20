@@ -64,7 +64,7 @@ class Cart {
   }
 
   updateDeliveryDateOption(productId, deliveryOptionId) {
-    let matchingItem = cart.find((item) => productId === item.productId);
+    let matchingItem = this.cartItem.find((item) => productId === item.productId);
 
     matchingItem.deliveryOptionId = deliveryOptionId;
 
@@ -75,8 +75,4 @@ class Cart {
 
 
 const cart = new Cart('cart-oop');
-const businessCart = new Cart('business');
-
-
-console.log(businessCart);
-console.log(cart)
+export default cart;
