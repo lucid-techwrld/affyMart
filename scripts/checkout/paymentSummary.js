@@ -1,4 +1,4 @@
-import {cart} from '../../Data/cart.js';
+import cart from '../../Data/cart-class.js';
 import {getProduct} from '../../Data/productsData.js';
 import {getDelivery} from '../../Data/deliveryDate.js';
 import {formatMoney} from '../../Data/utils/formatMoney.js';
@@ -8,7 +8,7 @@ export function renderPaymentSymmary() {
   let totalPrice = 0;
   let deliveryCost = 0;
   let cartCount = 0;
-  cart.forEach((cartItem) => {
+  cart.cartItem.forEach((cartItem) => {
   cartCount += cartItem.quantity;
   
   const product = getProduct(cartItem.productId);
