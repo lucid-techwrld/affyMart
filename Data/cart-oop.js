@@ -73,11 +73,5 @@ function Carts(localStorageKey) {
 return cart;
 }
 
-const cart = Carts('cart-oop');
-const businessCart = Carts('businessCart');
-
-
-cart.loadLocalStorage();
-businessCart.loadLocalStorage();
-console.log(businessCart);
-console.log(cart)
+export const cart = Carts('cart-oop');
+export default cart;
