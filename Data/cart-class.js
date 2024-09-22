@@ -71,6 +71,12 @@ class Cart {
     this.saveToStorage();
   }
 
+  getCartItem(cartId) {
+    let matchingCartId = this.cartItem.find
+    ((product) => product.productId === cartId);
+    return matchingCartId;
+  }
+
 }
 
 

@@ -39,7 +39,7 @@ export function renderOrderSummary() {
               <p>Quantity: <span class="quantity-label">${item.quantity}</span></p>
             </div>
             <div class="update-item">
-              <button>Update</button>
+              <button class="js-update-btn"  data-product-id="${matchingProduct.id}">Update</button>
               <button class="js-delete-btn" data-product-id="${matchingProduct.id}">Delete</button>
             </div>
           </div>
@@ -102,6 +102,17 @@ export function renderOrderSummary() {
       }
     });
   });
+  
+  document.querySelectorAll('.js-update-btn').forEach((updateBtn) => {
+  updateBtn.addEventListener('click', () => {
+    const updateId = updateBtn.dataset.productId;
+    const update = cart.getCartItem(updateId);
+    update.quantity++;
+    renderOrderSummary();
+    renderPaymentSummary();
+    renderCheckoutHead();
+  });
+});
 
 
   document.querySelectorAll('.js-delivery-option').forEach((element) => {
