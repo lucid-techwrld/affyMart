@@ -4,7 +4,7 @@ import {getDelivery} from '../../Data/deliveryDate.js';
 import {formatMoney} from '../../Data/utils/formatMoney.js';
 
 
-export function renderPaymentSymmary() {
+export function renderPaymentSummary() {
   let totalPrice = 0;
   let deliveryCost = 0;
   let cartCount = 0;
@@ -24,7 +24,7 @@ export function renderPaymentSymmary() {
   const total = tax + totalBeforeTax;
   
   
-  const paymenSummaryHTML = 
+  const paymentSummaryHTML = 
   `
     <div class="checkout-summary-container">
         <div class="summary-header">
@@ -55,5 +55,5 @@ export function renderPaymentSymmary() {
       </div>
   `;
   
-  document.querySelector('.js-payment-summary').innerHTML = paymenSummaryHTML;
+  document.querySelector('.js-payment-summary').innerHTML = paymentSummaryHTML;
 }

@@ -1,13 +1,13 @@
 import cart from '../../Data/cart-class.js';
-import {products, getProduct} from '../../Data/productsData.js';
+import { products, getProduct } from '../../Data/productsData.js';
 import formatMoney from '../../Data/utils/formatMoney.js'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import {deliveryOptions, getDelivery} from '../../Data/deliveryDate.js';
-import {renderPaymentSymmary} from './paymentSummary.js';
-import {renderCheckoutHead} from '../checkout-head.js';
+import { deliveryOptions, getDelivery } from '../../Data/deliveryDate.js';
+import { renderCheckoutHead } from '../checkout-head.js';
+import {renderPaymentSummary} from './paymentSummary.js';
 
 
-export function renderOderSummary() {
+export function renderOrderSummary() {
 
   let cartSummaryHtml = '';
 
@@ -48,7 +48,6 @@ export function renderOderSummary() {
         <div class="delivery-date-option">
           <p class="opt">Choose a delivery option</p>
           ${deliveryDateOptionHTML(matchingProduct, item)}
-
         </div>
       </div>
     `;
@@ -56,9 +55,10 @@ export function renderOderSummary() {
       console.error(`Product with id ${productId} not found in products array`);
     }
   });
+  
+  document.querySelector('.js-order-review').innerHTML = cartSummaryHtml;
 
-
-function deliveryDateOptionHTML(matchingProduct, item) {
+  function deliveryDateOptionHTML(matchingProduct, item) {
 
     let html = '';
 
@@ -89,9 +89,6 @@ function deliveryDateOptionHTML(matchingProduct, item) {
   }
 
 
-
-  document.querySelector('.js-order-review').innerHTML = cartSummaryHtml;
-
   document.querySelectorAll('.js-delete-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const productId = btn.dataset.productId;
@@ -99,9 +96,9 @@ function deliveryDateOptionHTML(matchingProduct, item) {
       const orderContainer = document.querySelector(`.js-order-container-${productId}`);
       if (orderContainer) {
         orderContainer.remove();
-        
-        renderPaymentSymmary();
+
         renderCheckoutHead();
+        renderPaymentSummary();
       }
     });
   });
@@ -111,10 +108,9 @@ function deliveryDateOptionHTML(matchingProduct, item) {
     element.addEventListener('click', () => {
       const { productId, deliveryOptionId } = element.dataset;
       cart.updateDeliveryDateOption(productId, deliveryOptionId);
-      renderOderSummary();
-      renderPaymentSymmary();
       renderCheckoutHead();
+      renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 }
-
