@@ -71,10 +71,11 @@ class Cart {
     this.saveToStorage();
   }
 
-  getCartItem(cartId) {
+  updateQuantity(cartId) {
     let matchingCartId = this.cartItem.find
     ((product) => product.productId === cartId);
-    return matchingCartId;
+    matchingCartId.quantity++
+    this.saveToStorage();
   }
 
 }

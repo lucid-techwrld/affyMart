@@ -106,8 +106,7 @@ export function renderOrderSummary() {
   document.querySelectorAll('.js-update-btn').forEach((updateBtn) => {
   updateBtn.addEventListener('click', () => {
     const updateId = updateBtn.dataset.productId;
-    const update = cart.getCartItem(updateId);
-    update.quantity++;
+    cart.updateQuantity(updateId);
     renderOrderSummary();
     renderPaymentSummary();
     renderCheckoutHead();
