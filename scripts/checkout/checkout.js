@@ -4,5 +4,11 @@ import {renderOrderSummary} from './orderSummary.js';
 
 renderCheckoutHead();
 renderOrderSummary();
+/*try {
+  renderPaymentSummary();
+} catch (error) {
+  console.error("Error rendering payment summary:", error);
+}*/
+
 renderPaymentSummary();
 
