@@ -17,6 +17,7 @@ function renderProductHTML(productsToRender) {
         <div class="product-info">
           <div class="product-name">
             <p id="product-name">${product.name}</p>
+            ${product.extraInfoHTML()}
             <p class="add-cart-message"></p>
           </div>
           <div class="price-cart">
